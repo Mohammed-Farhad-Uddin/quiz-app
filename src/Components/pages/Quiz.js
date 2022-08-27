@@ -42,7 +42,7 @@ export default function Quiz() {
   const { location } = history;
   const { state } = location;
   const { videoTitle } = state;
-  
+
 
   useEffect(() => {
     dispatch({
@@ -77,7 +77,6 @@ export default function Quiz() {
   // submit quiz
   async function submit() {
     const { uid } = currentUser;
-
     const db = getDatabase();
     const resultRef = ref(db, `result/${uid}`);
 

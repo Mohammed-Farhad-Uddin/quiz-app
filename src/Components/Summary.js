@@ -19,7 +19,7 @@ const Summary = ({ score, noq }) => {
         }
       }, [score, noq]);
 
-    const { loading, error, result } = useFetch(`https://api.pexels.com/v1/search?${getKeyword()}=nature&per_page=1`,
+    const { loading, error, result } = useFetch(`https://api.pexels.com/v1/search?query=${getKeyword}&per_page=1`,
         "GET",
         {
             Authorization: process.env.REACT_APP_PEXELS_API_KEY
@@ -47,6 +47,7 @@ const Summary = ({ score, noq }) => {
                     <img src={image} alt="Success" />
                 </div>
             )}
+            
         </div>
     );
 };
